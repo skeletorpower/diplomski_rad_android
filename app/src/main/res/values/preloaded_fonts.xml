@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/allan_bold</item>
+        <item>@font/amaranth_bold</item>
+        <item>@font/carter_one</item>
+        <item>@font/gentium_book_basic</item>
+        <item>@font/roboto</item>
+    </array>
+</resources>

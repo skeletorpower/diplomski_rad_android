@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/animationsFragment">
+
+    <fragment
+        android:id="@+id/animationsFragment"
+        android:name="com.aleksandar.novic.animation.AnimationsFragment"
+        android:label="AnimationsFragment"
+        tools:layout="@layout/fragment_animations">
+        <action
+            android:id="@+id/action_animationsFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.aleksandar.novic.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/fragment_camera">
+        <argument
+            android:name="animation"
+            app:argType="com.aleksandar.novic.data.model.Animation" />
+        <action
+            android:id="@+id/action_cameraFragment_to_animationResponseFragment"
+            app:destination="@id/animationResponseFragment"
+            app:popUpTo="@+id/animationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animationResponseFragment"
+        android:name="com.aleksandar.novic.animation.AnimationResponseFragment"
+        android:label="AnimationResponseFragment"
+        tools:layout="@layout/fragment_animation_response">
+        <argument
+            android:name="like"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="animationId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

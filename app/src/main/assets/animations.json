@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "first animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 30,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 50,
+        "value": 75,
+        "interpolator": "linear"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "real animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 0,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 30,
+        "value": 75,
+        "interpolator": "easy_ease"
+      },
+      {
+        "key_frame": 59,
+        "value": 285,
+        "interpolator": "linear"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "first animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 30,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 50,
+        "value": 75,
+        "interpolator": "linear"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "real animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 0,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 30,
+        "value": 75,
+        "interpolator": "easy_ease"
+      },
+      {
+        "key_frame": 59,
+        "value": 285,
+        "interpolator": "linear"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "first animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 30,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 50,
+        "value": 75,
+        "interpolator": "linear"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "real animation",
+    "time": 2,
+    "key_frames": [
+      {
+        "key_frame": 0,
+        "value": 285,
+        "interpolator": "linear"
+      },
+      {
+        "key_frame": 30,
+        "value": 75,
+        "interpolator": "easy_ease"
+      },
+      {
+        "key_frame": 59,
+        "value": 285,
+        "interpolator": "linear"
+      }
+    ]
+  }
+]
