@@ -1,5 +1,6 @@
 package com.aleksandar.novic.data.model
 
+/*Ovo su dva modela koji sluze da mapiraju json koji dobijemo sa servera*/
 data class AnimationData(
     val id: Int,
     val name: String,

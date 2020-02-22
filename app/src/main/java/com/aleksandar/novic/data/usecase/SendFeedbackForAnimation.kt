@@ -5,6 +5,7 @@ import io.reactivex.Single
 
 object SendFeedbackForAnimation {
 
+    /*Kreiranje service pomocu retrofita i pozivanje API za like i dislike*/
     fun likeAnimation(id: Int): Single<String> {
         return RetrofitConfig.getAnimationService().likeAnimation(id)
     }

@@ -6,6 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
+/*Ovo je service ( java interface) koji definise http metode naseg API-a
+* Mora da se definisi kada se koristi najpopularnija Http biblioteka za Android - Retrofit*/
 interface AnimationsService{
 
     @GET("/animations")
