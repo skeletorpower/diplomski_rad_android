@@ -63,6 +63,10 @@ class CameraFragment : Fragment(R.layout.fragment_camera){
         /*ImageAnalyzeru setujemo sta ce biti like i dislike*/
         ImageAnalyzer.like = like
         ImageAnalyzer.dislike = dislike
+        text_like.text = "Like: \n${like}"
+        text_dislike.text = "Dislike: \n${dislike}"
+        text_like_shadow.text = "Like: \n${like}"
+        text_dislike_shadow.text = "Dislike: \n${dislike}"
         /*Ovde setujemo callback koji se okida kada AI prepozna objekat koji ima znacenje like-a ili dislike-a i u callback-u dobijamo true ako je like
         * ili false ako je dislike*/
         ImageAnalyzer.navigatesCallback = {
@@ -70,6 +74,12 @@ class CameraFragment : Fragment(R.layout.fragment_camera){
             * fragmenata idemo na sledeci ekran koji je zaduzen za slanje like-a ili dislike-a na server*/
             if (this@CameraFragment.isAdded)
             (requireActivity() as MainActivity).navController.navigate(CameraFragmentDirections.actionCameraFragmentToAnimationResponseFragment(it, animation.id))
+        }
+        ImageAnalyzer.candidatesCallback = {
+            if (text_answer != null && text_answer_shadow != null) {
+                text_answer.text = it
+                text_answer_shadow.text = it
+            }
         }
         /*ovde proveravamo da li je korisnik na svom ekranu dao permisije za koriscenje kamere i ako jeste onda palimo kameru pomocu metoda bindCameraUseCase*/
         if (hasPermission()){
@@ -172,6 +182,7 @@ object ImageAnalyzer:ImageAnalysis.Analyzer{
     lateinit var dislike: String
 
     var navigatesCallback: ((Boolean) -> Unit)? = null
+    var candidatesCallback: ((String) -> Unit)? = null
 
     private fun ByteBuffer.toByteArray(): ByteArray {
         rewind()    // Rewind the buffer to zero
@@ -192,6 +203,9 @@ object ImageAnalyzer:ImageAnalysis.Analyzer{
             val results = animationResponseClassifier?.recognizeImage(cropBitmap(bitmap))
 
             if (results?.isNotEmpty() == true){
+                Handler(Looper.getMainLooper()).post {
+                    candidatesCallback?.invoke(results[0].title)
+                }
                 if(results[0].title == like){
                     Repository.background = bitmap
                     e("TAG", "it's a $like!!!")

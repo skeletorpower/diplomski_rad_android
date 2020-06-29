@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_question_shadow"
@@ -29,6 +30,97 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_like"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/carter_one"
+        android:text="like: \nremote controller"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10sp"
+        android:elevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_question"
+        app:layout_constraintEnd_toStartOf="@id/text_answer"
+        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_like_shadow"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/carter_one"
+        android:text="like: \nremote controller"
+        android:textColor="@color/colorOnPrimary"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/text_like"
+        app:layout_constraintTop_toTopOf="@id/text_like"
+        app:layout_constraintEnd_toEndOf="@id/text_like"
+        android:gravity="center"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:background="@drawable/shape"
+        android:id="@+id/text_answer"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/carter_one"
+        android:text="some answer"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:elevation="2dp"
+        app:layout_constraintStart_toEndOf="@id/text_like"
+        app:layout_constraintTop_toTopOf="@id/text_like"
+        app:layout_constraintEnd_toStartOf="@id/text_dislike"
+        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_answer_shadow"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/carter_one"
+        android:text="some answer"
+        android:textColor="@color/colorOnPrimary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/text_answer"
+        app:layout_constraintTop_toTopOf="@id/text_answer"
+        app:layout_constraintEnd_toEndOf="@id/text_answer"
+        android:gravity="center"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_dislike"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/carter_one"
+        android:layout_marginEnd="18dp"
+        android:text="dislike: \nkeyboard"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10sp"
+        android:elevation="2dp"
+        app:layout_constraintStart_toEndOf="@id/text_answer"
+        app:layout_constraintTop_toTopOf="@id/text_answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_dislike_shadow"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/carter_one"
+        android:text="dislike: \nkeyboard"
+        android:textColor="@color/colorOnPrimary"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/text_dislike"
+        app:layout_constraintTop_toTopOf="@id/text_dislike"
+        app:layout_constraintEnd_toEndOf="@id/text_dislike"
+        android:gravity="center"/>
 
     <TextureView
         android:id="@+id/camera_view"
